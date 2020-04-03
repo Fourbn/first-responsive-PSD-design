@@ -8,12 +8,9 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-
-/*************/
 /* stripping */
-html {
-    font-size: 62.5%; /* base font-size 10px */
-}
+/*************/
+html { font-size: 62.5%; } /* base font-size 10px */
 
 body,
 h1,
@@ -34,8 +31,8 @@ a {
 ul { list-style: none; }
 /*************/
 
-/*************/
 /* general styles */
+/*************/
 img {
     width: 100%;
     height: auto;
@@ -98,19 +95,6 @@ h3 {
     color: #fff;
 }
 
-/*  Outline Stylings:
-generic button, 
-nav buttons, 
-blog post anchor,
-left & right blog swipe arrows*/
-.button:focus, 
-nav li:focus-within a,
-.blog-a:focus,
-.fas-left:focus,
-.fas-right:focus { 
-    outline: 1px dotted #ffb100; 
-}
-
 .logo {
     font-size: 2rem;
     font-family: 'Cardo', sans-serif;
@@ -137,11 +121,20 @@ nav li:focus-within a,
     bottom: 0;
 }
 
+/* focus outline general styling */
+
+.button:focus,  /* main buttons (shop now, learn more etc) */ 
+nav li:focus-within a, /* nav menu links */
+.blog-a:focus, /* anchor link to more blog posts */
+.fas-left:focus, /* blog carousel left & right arrow */
+.fas-right:focus {  
+    outline: 1px dotted #ffb100; 
+}
 /*************/
 
 
-/*************/
 /* header styles */
+/*************/
 header {
     background-image: url(./Assets/header-image.jpg);
     width: 100%;
@@ -154,6 +147,13 @@ header {
 header .logo {
     position: absolute;
     left: 10px;
+}
+
+h1 {
+    font-size: calc(8rem);
+    line-height: 1;
+    margin: 140px 0 30px 0;
+    letter-spacing: 4px;
 }
 
 /* navigation */
@@ -172,13 +172,6 @@ nav li {
 
 nav li a { padding-bottom: 6px; }
 
-h1 {
-    font-size: calc(8rem);
-    line-height: 1;
-    margin: 140px 0 30px 0;
-    letter-spacing: 4px;
-}
-
 /* mobile navigation button general stylings, hidden until sized down (media query @765px) */
 .mobile-nav {
     font-size: 2.5rem;
@@ -190,8 +183,9 @@ h1 {
 input[type="checkbox"] { display: none; }
 /*************/
 
-/*************/
 /* main section styles */
+/*************/
+
 /* .new-products section */
 .new-products article {
     display: flex;
@@ -214,13 +208,9 @@ input[type="checkbox"] { display: none; }
     margin-top: 30px;
 }
 
-.prod-breakdown p {
-    margin-bottom: 35px;
-}
+.prod-breakdown p { margin-bottom: 35px; }
 
-.prod-breakdown .button {
-    align-self: flex-start;
-}
+.prod-breakdown .button { align-self: flex-start; }
 
 .new-products .side-img {
     order: -1;
@@ -266,16 +256,14 @@ input[type="checkbox"] { display: none; }
     width: 70%;
 }
 
-.blog h2 {
-    padding: 20px 0;
-}
+.blog h2 { padding: 20px 0; }
 
 .blog p {
     text-align: center;
     margin-bottom: 30px;
 }
 
-/* left and right arrows for .blog-posts */
+/* left and right arrows for .blog-posts carousel. carousel doesn't work, I tried but the jQuery beat me! This time.... */
 .blog a {
     position: absolute;
     font-size: 6rem;
@@ -285,9 +273,8 @@ input[type="checkbox"] { display: none; }
 .fas-left { left: 130px; }
 .fas-right { right: 130px; }
 
-/* .feat-products gallery section */
-/* * {border: red 1px solid;} */
 
+/* .feat-products gallery section */
 .feat-products {
     text-align: center;
     min-height: 580px;
@@ -295,9 +282,7 @@ input[type="checkbox"] { display: none; }
     color: #7b2f00;
 }
 
-.feat-products h2 {
-    padding: 10px 0 40px 0;
-}
+.feat-products h2 { padding: 10px 0 40px 0; }
 
 .feat-products ul {
     display: flex;
@@ -345,6 +330,7 @@ input[type="checkbox"] { display: none; }
 }
 /*************/
 
+
 /* contact form section */
 /*************/
 .contact-form {
@@ -372,7 +358,12 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-    opacity: .75;
+    opacity: .5;
+}
+
+input[type="text"]:invalid:focus,
+input[type="email"]:invalid:focus {
+    border: 2px solid red;
 }
 
 input[type="text"],
@@ -395,13 +386,8 @@ textarea {
 
 /* footer section */
 /*************/
-footer {
-    background: black;
-}
-
-footer p {
-    margin: 0 auto;
-}
+footer { background: black; }
+footer p { margin: 0 auto; }
 /*************/
 
 /* @media query for responsive design */
@@ -410,12 +396,9 @@ footer p {
     .fas-left { left: 90px; }
     .fas-right { right: 90px; }
 
-    .new-products .prod-breakdown {
-        padding-left: 10px;
-    }
+    .new-products .prod-breakdown { padding-left: 10px; }
 
     h2 { font-size: 3.5rem; }
-
     p { font-size: 1.5rem; }
 }
 
@@ -431,6 +414,7 @@ footer p {
     form { margin: 0; }
 }
 
+/* halfway transition to mobile design */
 @media (max-width: 768px) {   
     .wrapper { width: 98%; }
 
@@ -471,6 +455,7 @@ footer p {
         opacity: 1;
         font-size: 5rem;
         padding: 10px;
+        top: 6px;
         transition: all .5s;
     }
 
@@ -478,6 +463,7 @@ footer p {
         right: 8px;
         padding-top: 60px;
     }
+    /* mobile nav stylings end here */
 
     h1 {
         text-align: center;
@@ -524,8 +510,9 @@ footer p {
     .contact-form { padding: 45px; }
 }
 
+/* complete transition to mobile design */
 @media (max-width: 675px) {
-    .wrapper { width: 98%; }
+    .wrapper { width: 95%; }
 
     h1 { font-size: calc(11vw); }
 
@@ -544,7 +531,7 @@ footer p {
     }
 
     .prod-breakdown h2 { 
-        margin-top: 0;
+        margin-top: 10px;
         padding: 20px 0;
     }
 
@@ -559,7 +546,7 @@ footer p {
 
     .prod-breakdown .button {
         align-self: center;
-        filter: drop-shadow(1px 1px .75px #232221);
+        filter: none;
     }
 
     .contact-form { padding: 45px 5px; }
