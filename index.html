@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 - Jewel Hub</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- favicon images -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./Assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon_io/favicon-32x32.png">
+    <link rel="manifest" href="./Assets/favicon_io/site.webmanifest">
+
+    <!-- Cardo & Barlow font links -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow:400,500|Cardo:400,400i&display=swap" rel="stylesheet">
+
+    <!-- Smooth scroll jQuery -->
+    <script src="https://kit.fontawesome.com/08bb3c9c2d.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+    <header>
+        <p class="logo">Jewel //Hub</p>
+        <div class="wrapper">
+            <nav>
+                <label for="mobile-nav" class="mobile-nav " alt="Navigation Menu"><i class="fa fa-bars"></i></label>
+                <input type="checkbox" id="mobile-nav" class="checkbox" autocomplete="off">
+
+                <ul class="nav-bar">
+                    <li><a class="underline" href="#">Home</a></li>
+                    <li><a class="underline" href="#feat-prod">Shop</a></li>
+                    <li><a class="underline" href="#blog">Blog</a></li>
+                    <li><a class="underline" href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <h1>Layering collection</h1>
+            <a href="#" class="button">Shop now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class= "new-products">
+            <div class="wrapper">
+                <article>
+                    <div class="prod-breakdown">
+                        <h2>Check out new arrivals</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est mollitia minima aliquid iure placeat blanditiis minus iste praesentium officiis obcaecati cupiditate sapiente reprehenderit laudantium nobis quod maiores suscipit architecto, quae iusto neque quia distinctio doloribus veritatis fugiat. Expedita obcaecati tenetur aut, ipsam id ipsa.</p>
+                        <a href="#" class="button">Shop now</a>
+                    </div>
+                    <div class="side-img"><img src="./Assets/model.jpg" alt="handsome man with deep skin tone features a gold chain and Africa pendant against his bare chest."></div>
+                </article>
+            </div>
+        </section>
+        <section class= "blog-posts" id="blog">
+            <div class="wrapper">
+                <a class="blog-a underline" href="#" title="Click to see our latest blogs">Latest blog posts</a>
+                <article class="blog">
+                        <h2>A sustainable future</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, non nam atque maxime officia minima necessitatibus assumenda eaque asperiores, commodi est! Dolores magni nihil nemo distinctio voluptates illum voluptatem pariatur?</p>
+                        <a class="fas-left" href="#"><i class="fas fa-chevron-left"></i></a>
+                        <a class="fas-right" href="#"><i class="fas fa-chevron-right"></i></a>
+                </article>
+                <a href="#" class="button">Learn more</a>
+            </div>
+        </section>
+        <section class= "feat-products" id="feat-prod">
+            <div class="wrapper">
+                <h2>Featured items</h2>
+                <ul>
+                    <li class="img-chains">
+                        <img src="./Assets/chains.jpg" alt="Four gold and silver chains with pendants hanging from out of frame.">
+                        <div>
+                            <h3>Dole chains & pendants</h3>
+                            <p>$50</p>
+                        </div>
+                    </li>
+                    <li class="img-ring">
+                        <img src="./Assets/ring-model.jpg" alt="Black and white image of a right hand wearing a shining silver metal band on the ring finger.">
+                        <div>
+                            <h3>Made of steel ring</h3>
+                            <p>$30</p>
+                        </div>
+                    </li>
+                    <li class="img-watch">
+                        <img src="./Assets/watch-model.jpg" alt="Left hand and forearm bending into frame featuring a large gold men's watch with black mechanical watch face.">
+                        <div>
+                            <h3>Malvori watch</h3>
+                            <p>$120</p>
+                        </div>
+                    </li>
+                </ul>
+            </div> <!-- .feat-products wrapper ends here -->
+        </section>
+        <section class= "contact-form" id="contact">
+            <div class="wrapper">
+                <h2>Contact Us</h2>
+                <form action="#" method="#" name="contact-form">
+                    <label for="name" class="sr-only">Name</label>
+                    <input type="text" id="name" required placeholder="Name">
+
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" id="email" required placeholder="Email">
+
+                    <label for="message" class="sr-only">Message</label>
+                    <textarea name="message" id="message" maxlength="255" placeholder="Let us know how we can help."></textarea>
+
+                    <input type="submit" value="Submit" class="button">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p class="logo">Jewel //Hub</p>
+        </div>
+    </footer>
+
+    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+
+    <script>
+        $(function(){
+            $('a').smoothScroll({
+                speed: 700,
+                autoFocus: true,
+            });
+
+            $('.checkbox').click(function(){
+                $('.mobile-nav').toggleClass('checked');
+            })
+        })
+    </script>
+</body>
+</html>
+
+<!-- font-size: 5rem, padding: 10px -->
